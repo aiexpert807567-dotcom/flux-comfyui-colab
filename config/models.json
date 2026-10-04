@@ -1,0 +1,67 @@
+{
+  "_comment": "Central model registry. Add a model by appending an entry. 'subdir' is relative to MODELS_DIR. URLs are tried in order. min_bytes is a sanity floor (truncated download detection).",
+  "models": [
+    {
+      "id": "flux2_klein_4b_bf16",
+      "group": "core", "variant": "bf16",
+      "subdir": "diffusion_models", "filename": "flux-2-klein-4b.safetensors",
+      "approx_gb": 7.3, "min_bytes": 7000000000,
+      "license": "Apache-2.0",
+      "urls": [
+        "https://huggingface.co/Comfy-Org/flux2-klein/resolve/main/split_files/diffusion_models/flux-2-klein-4b.safetensors"
+      ]
+    },
+    {
+      "id": "flux2_klein_4b_fp8",
+      "group": "core", "variant": "fp8",
+      "subdir": "diffusion_models", "filename": "flux-2-klein-4b-fp8.safetensors",
+      "approx_gb": 3.9, "min_bytes": 3500000000,
+      "license": "Apache-2.0",
+      "urls": [
+        "https://huggingface.co/black-forest-labs/FLUX.2-klein-4b-fp8/resolve/main/flux-2-klein-4b-fp8.safetensors"
+      ]
+    },
+    {
+      "id": "qwen3_4b_text_encoder",
+      "group": "core",
+      "subdir": "text_encoders", "filename": "qwen_3_4b.safetensors",
+      "approx_gb": 8.1, "min_bytes": 7500000000,
+      "license": "Apache-2.0 (Qwen3-4B)",
+      "urls": [
+        "https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-4b/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+        "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors"
+      ]
+    },
+    {
+      "id": "flux2_vae",
+      "group": "core",
+      "subdir": "vae", "filename": "flux2-vae.safetensors",
+      "approx_gb": 0.35, "min_bytes": 300000000,
+      "license": "Apache-2.0",
+      "urls": [
+        "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": "realesrgan_x4plus",
+      "group": "upscaler",
+      "subdir": "upscale_models", "filename": "RealESRGAN_x4plus.pth",
+      "approx_gb": 0.07, "min_bytes": 60000000,
+      "license": "BSD-3-Clause (Real-ESRGAN)",
+      "urls": [
+        "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth"
+      ]
+    },
+    {
+      "id": "flux2_klein_4b_base_fp8",
+      "group": "alt",
+      "subdir": "diffusion_models", "filename": "flux-2-klein-base-4b-fp8.safetensors",
+      "approx_gb": 3.9, "min_bytes": 3500000000,
+      "license": "Apache-2.0",
+      "note": "Undistilled base model: 20-50 steps, cfg ~4, supports negative prompts. Install with: python scripts/download_models.py --only flux2_klein_4b_base_fp8",
+      "urls": [
+        "https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4b-fp8/resolve/main/flux-2-klein-base-4b-fp8.safetensors"
+      ]
+    }
+  ]
+}

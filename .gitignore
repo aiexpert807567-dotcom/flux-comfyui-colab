@@ -1,0 +1,46 @@
+# --- Secrets (NEVER commit) ---
+.env
+*.env
+!config/project.env
+config/local.env
+*.key
+*.pem
+token*
+*token*.txt
+secrets/
+.huggingface/
+.cache/huggingface/
+.git-credentials
+
+# --- Large artifacts (models + generated images) ---
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.bin
+*.onnx
+models/
+ComfyUI/
+outputs/
+output/
+input/
+temp/
+*.png
+*.jpg
+*.jpeg
+*.webp
+!docs/**/*.png
+
+# --- Generated at runtime ---
+config/generated/
+*.log
+*.part
+
+# --- Python / editors / OS ---
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
