@@ -11,7 +11,6 @@ command -v nvidia-smi >/dev/null || die "No NVIDIA GPU. Colab: Runtime > Change 
 python3 "$ROOT/scripts/detect_gpu.py" || die "GPU not sufficient for FLUX.2 klein 4B (see message above)."
 
 log "2/7 Storage: persist=$PERSIST  models=$MODELS_DIR  outputs=$OUTPUT_DIR"
-mkdir -p "$MODELS_DIR"/{diffusion_models,text_encoders,vae,upscale_models} "$OUTPUT_DIR"
 
 log "3/7 ComfyUI $COMFYUI_REF -> $COMFY_DIR"
 if [ -d "$COMFY_DIR/.git" ]; then
@@ -20,6 +19,7 @@ else
   git clone --quiet "$COMFYUI_REPO" "$COMFY_DIR"
 fi
 git -C "$COMFY_DIR" checkout --quiet "$COMFYUI_REF" || die "Cannot check out COMFYUI_REF=$COMFYUI_REF"
+mkdir -p "$MODELS_DIR"/{diffusion_models,text_encoders,vae,upscale_models} "$OUTPUT_DIR"
 
 log "4/7 Python dependencies (keeping Colab's preinstalled PyTorch)"
 REQ_TMP="$(mktemp)"
